@@ -39,35 +39,30 @@ tbody img{
 	margin: 0 auto;
 	background-color: #8080c0 !important;
     color: #fff !important;
-    border: 1px solid #486577 !important;
 }
 .archive{
 	width:70px;
 	margin: 0 auto;
 	background-color: #1f6cde !important;
     color: #fff !important;
-    border: 1px solid #486577 !important;
 }
 .tip{
 	width:70px;
 	margin: 0 auto;
 	background-color: #ffc000 !important;
     color: #fff !important;
-    border: 1px solid #486577 !important;
 }
 .survey{
 	width:70px;
 	margin: 0 auto;
 	background-color: #2b3768 !important;
     color: #fff !important;
-    border: 1px solid #486577 !important;
 }
 .review{
 	width:70px;
 	margin: 0 auto;
 	background-color: #008080 !important;
     color: #fff !important;
-    border: 1px solid #486577 !important;
 }
 .tline{
 	font-family: 'TheJamsil5Bold';
@@ -82,4 +77,45 @@ tbody img{
 }
 .clike span{
 	color:#333;
+}
+.b_insert input{
+	height: 20px;
+	margin-bottom: 10px;
+}
+.b_insert{
+	margin-bottom: 500px;
+	position: relative;
+}
+.boardgamelist{
+	margin-bottom: 500px;
+}
+.boardgamelist div{
+	margin-top:50px;
+	border-bottom: 1px solid;
+}
+.btngrp .btn{
+	cursor:pointer;
+	font-weight: bold;
+	font-size: 80%;
+}
+.freeboardtitle{
+	height:50px;
+	font-size: 20pt;
+}
+.viewBox table td.content {
+    padding: 20px 0 200px 10px;
+    color: #333;
+    line-height: 1.6;
+    font-size: 12pt;
+}
+.freeboardbgimg{
+	width:100px;
+	height: 100px;
+	text-align: center;
+}
+#freeboard2 td{
+	border-bottom-style: none;
+}
+.freeboarddate{
+	width:150px;
 }
