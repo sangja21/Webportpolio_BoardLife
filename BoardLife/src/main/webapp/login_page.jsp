@@ -63,6 +63,13 @@
                 <div class="notice">
                     <p id="warning"> <% if(warn != null){ out.print("로그인에 실패하였습니다. 아이디와 비밀번호를 확인해주세요."); } %></p>
                 </div>
+                
+                <div class="sns_login">
+                
+                <a href="#" class="kakao"><span><img src="img/sns_kakao.png" alt="kakao"></span> <p> 카카오 아이디로 로그인</p> </a>
+                <a href="#" class="naver"><span><img src="img/sns_naver.png" alt="naver"></span> <p> 네이버 아이디로 로그인</p> </a>
+                
+                </div>
 
             </div>
         </div>
