@@ -26,7 +26,7 @@ public class Freeboard_cont {
 	    ArrayList<Community> arr = new ArrayList<Community>();
 	    try{
 	    	Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
 	    	stmt = conn.createStatement();
 	        if(conn == null)
 	            throw new Exception("데이터베이스에 연결할 수 없습니다.");
@@ -62,7 +62,7 @@ public class Freeboard_cont {
 	public void delete(String g) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
 			String s = "delete from community where post_id = '"+ g +"';";
 			stmt =  conn.createStatement();															
 			stmt.executeUpdate(s);
@@ -79,7 +79,7 @@ public class Freeboard_cont {
 	public void insert1(Community data) {
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","rhkddml");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","0407");
 		String ins = String.format("insert into community(post_title,post_content,post_category,user_id,post_img,b_id) values('%s','%s','%s','%s','%s','%s');",data.getPost_title(),data.getPost_content(),data.getPost_category(),data.getUser_id(),data.getBoardgame_img(),data.getB_id());
 		stmt = conn.createStatement();
 		stmt.executeUpdate(ins);
@@ -97,7 +97,7 @@ public class Freeboard_cont {
 	public void insertbg(Boardgames bg) {
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","rhkddml");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","0407");
 		String ins = String.format("insert into board_game values('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",bg.getB_id(),bg.getB_title(),bg.getYearof(),bg.getPrice(),bg.getPnum(),bg.getRunning_time(),bg.getAge(),bg.getB_img(),bg.getGame_level(),bg.getDesigner(),bg.getSub_lang(),bg.getB_theme(),bg.getProceed(),bg.getB_detail(),bg.getPublisher());
 		stmt = conn.createStatement();
 		stmt.executeUpdate(ins);
@@ -117,7 +117,7 @@ public ArrayList<Boardgames> bgselect(){
 	    ArrayList<Boardgames> arr1 = new ArrayList<Boardgames>();
 	    try{
 	    	Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
 	    	stmt = conn.createStatement();
 	        if(conn == null)
 	            throw new Exception("데이터베이스에 연결할 수 없습니다.");
@@ -165,7 +165,7 @@ public Boardgames bgselectone(int g){
     Boardgames bg = new Boardgames();
     try{
     	Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
     	stmt = conn.createStatement();
         if(conn == null)
             throw new Exception("데이터베이스에 연결할 수 없습니다.");
@@ -213,7 +213,7 @@ public Boardgames bgselectone(int g){
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8","root","0407");
 			String s = "update community set post_title ='"+u.getPost_title()+"', post_content = '"+u.getPost_content()+"', post_category = '"+u.getPost_category()+"',b_id = '"+u.getB_id()+"' where post_id = "+u.getPost_id()+";";
 			stmt =  conn.createStatement();
 			stmt.executeUpdate(s);
@@ -232,7 +232,7 @@ public Boardgames bgselectone(int g){
 		ArrayList<Community> arr = new ArrayList<Community>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from member_info where user_id = '"+ idd +"' && password = '"+ pwd+ "';");
 			while(rs.next()){
@@ -263,7 +263,7 @@ public Boardgames bgselectone(int g){
 	    ArrayList<Community> arr1 = new ArrayList<Community>();
 	    try{
 	    	Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","0407");
 	    	stmt = conn.createStatement();
 	        if(conn == null)
 	            throw new Exception("데이터베이스에 연결할 수 없습니다.");
@@ -309,7 +309,7 @@ public Boardgames bgselectone(int g){
 		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "rhkddml");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "0407");
 			save = connect.createStatement();
 			System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 			String data = "select * from community where post_id <" + i + " ORDER BY post_id DESC LIMIT 1;"; 
@@ -348,7 +348,7 @@ public Boardgames bgselectone(int g){
 		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "rhkddml");
+			connect = DriverManager.getConnection("jdbc	`:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "0407");
 			save = connect.createStatement();
 			System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 			String data = "select * from community where post_id >" + i + " ORDER BY post_id ASC LIMIT 1;"; 

@@ -1,0 +1,431 @@
+@charset "utf-8";
+/* boardgame club CSS */
+
+/********************************* boardgame_club_list *********************************/
+#boardgame_club_list {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#boardgame_club_list h3 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.current {
+    margin: 20px auto;
+    width: 390px;
+}
+
+.current li.status {
+    float: left;
+    margin-right: 30px;
+}
+
+.current li.status p {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.current li.status span {
+    font-size: 12px;
+}
+
+.tab_wrap {
+    width: 570px;
+    margin: 0 auto 50px;
+}
+
+.tab_wrap .tab_menu {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid blue;
+    float: left;
+    margin-right: 20px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: ease-out .2s;
+}
+
+.tab_wrap .tab_menu:hover {
+    background-color: blue;
+    color: #fff;
+}
+
+.club_wrap {
+    width: 1280px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.club {
+    display: block;
+    width: 400px;
+    height: 310px;
+    background-color: #fee4cb;
+    /*    background-color: #dbf6fd;*/
+    border-radius: 20px;
+    margin: 10px;
+    color: #333;
+    position: relative;
+    float: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: ease-out .2s;
+}
+
+.club .date {
+    display: block;
+    padding: 15px 0 15px 20px;
+    color: #999;
+}
+
+.club .club_info img {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+.club .club_info .club_title {
+    width: 240px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.club .club_info .club_title .club_name {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.club .club_info .club_title .board_game {
+    display: block;
+    font-size-adjust: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.club .club_info .club_title .hashtag {
+    display: inline-block;
+    /*    background-color: rgba(255,255,255,0.4);*/
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 14px;
+    /*    color: #888;*/
+    color: #333;
+    font-weight: 500;
+    padding: 2px 8px;
+    margin: 3px 2px;
+}
+
+.progress_box {
+    margin: 20px 0 0 20px;
+}
+
+.progress_box p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.progress_box .progress_bar {
+    display: block;
+    width: 90%;
+    height: 6px;
+    /*    background-color: #fff;*/
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress_box .progress_bar .progress {
+    display: block;
+    width: 60%;
+    height: 100%;
+    background-color: coral;
+}
+
+.progress_box .per {
+    text-align: right;
+    margin: 10px 40px 0 0;
+}
+
+.participate {
+    padding-top: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #fff;
+    position: relative;
+}
+
+.participate img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 20px;
+}
+
+.participate .plus {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 27px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    /*    background-color: rgba(0,0,0,0.1);*/
+    font-weight: 900;
+    color: coral;
+    text-align: center;
+    font-size: 30px;
+}
+
+.participate .left {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    display: block;
+    width: 120px;
+    height: 26px;
+    font-size: 14px;
+    line-height: 26px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /*    background-color: rgba(0,0,0,0.1);*/
+    text-align: center;
+    font-weight: 700;
+    color: coral;
+}
+
+.club p.btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 23px;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 26px;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    text-align: center;
+}
+
+/* hover animation */
+
+.club:hover {
+    transform: translateY(-10px);
+}
+
+
+
+/* color type1 */
+
+.type1 {
+    background-color: #fee4cb;
+}
+
+.type1 .progress_bar .progress {
+    background-color: #ff942e;
+}
+
+.type1 .plus {
+    color: #ff942e;
+}
+
+.type1 .left {
+    color: #ff942e;
+}
+
+/* color type2 */
+
+.type2 {
+    background-color: #e9e7fd;
+}
+
+.type2 .progress_bar .progress {
+    background-color: #4f3ff0;
+}
+
+.type2 .plus {
+    color: #4f3ff0;
+}
+
+.type2 .left {
+    color: #4f3ff0;
+}
+
+/* color type3 */
+
+.type3 {
+    background-color: #dbf6fd;
+}
+
+.type3 .progress_bar .progress {
+    background-color: #096c86;
+}
+
+.type3 .plus {
+    color: #096c86;
+}
+
+.type3 .left {
+    color: #096c86;
+}
+
+/* color type4 */
+
+.type4 {
+    background-color: #ffd3e2;
+}
+
+.type4 .progress_bar .progress {
+    background-color: #df3670;
+}
+
+.type4 .plus {
+    color: #df3670;
+}
+
+.type4 .left {
+    color: #df3670;
+}
+
+/* color type5 */
+
+.type5 {
+    background-color: #c8f7dc;
+}
+
+.type5 .progress_bar .progress {
+    background-color: #34c471;
+}
+
+.type5 .plus {
+    color: #34c471;
+}
+
+.type5 .left {
+    color: #34c471;
+}
+
+/* color type6 */
+
+.type6 {
+    background-color: #d5deff;
+}
+
+.type6 .progress_bar .progress {
+    background-color: #4067f9;
+}
+
+.type6 .plus {
+    color: #4067f9;
+}
+
+.type6 .left {
+    color: #4067f9;
+}
+
+/* color end_club */
+
+.typeE {
+    background-color: #d3d3d3;
+    position: relative;
+}
+
+.typeE .end {
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.typeE .progress_bar .progress {
+    background-color: #333;
+}
+
+.typeE .plus {
+    color: #333;
+}
+
+.typeE .left {
+    color: #333;
+}
+
+/* review tab */
+
+.review_tap {
+    width: 1280px;
+    margin: 50px 0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.review_tap p.review_title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.review_wrap {
+    margin-top: 30px;
+}
+
+.review {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.review .img_wrap {
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+.review img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.review .txt_wrap {
+    width: 1200px;
+    height: 100%;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+}
+
+.review .txt_wrap .nickname {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.review .txt_wrap .sentence {
+    font-size: 14px;
+    line-height: 16px;
+    color: #555;
+}
+
+.review .txt_wrap .r_date {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.review .txt_wrap .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
