@@ -7,272 +7,386 @@
 
     <link rel="stylesheet" href="css/boardgameclub.css" type="text/css">
 
-    <section id="boardgame_club_list">
+     <section id="club_slider">
 
-        <ul class="tab_wrap clearfix">
-            <li class="tab_menu">전체 클럽</li>
-            <li class="tab_menu">온라인 클럽</li>
-            <li class="tab_menu">오프라인 클럽</li>
-            <li class="tab_menu">클럽 제안하기</li>
-        </ul>
+        <div class="inner_slider">
 
-        <h3>Board Game Clubs Status</h3>
+            <div class="left slide-btn"><img src="img/next-left.png" alt="left"></div>
+            <div class="right slide-btn"><img src="img/next-right.png" alt="right"></div>
 
-        <ul class="current clearfix">
+            <ul class="sclub_wrap">
 
-            <li class="status">
-                <p>12</p>
-                <span>진행중인 클럽</span>
-            </li>
+                <li class="sclub type1 clearfix">
+                    <div class="off"></div>
+                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
+                    <div class="sclub_info">
 
-            <li class="status">
-                <p>23</p>
-                <span>종료된 클럽</span>
-            </li>
+                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="sclub_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-            <li class="status">
-                <p>35</p>
-                <span>전체 클럽</span>
-            </li>
+                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
 
-            <li class="status">
-                <p>78</p>
-                <span>참여중인 사람</span>
-            </li>
+                        <a href="#">자세히 보기</a>
 
-        </ul>
-
-
-        <div class="club_wrap clearfix">
-
-            <a href="#" class="club type1  clearfix">
-                <span class="date">2023. 04. 10.</span>
-
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
                     </div>
-                </div>
+                </li>
 
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
+                <li class="sclub type2 clearfix">
+                    <div class="off"></div>
+                    <div class="sclub_cover"><img src="img/7wonders.png" alt="7wonders"></div>
+                    <div class="sclub_info">
 
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
+                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="sclub_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-                <p class="btn">♡</p>
-            </a>
+                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
 
-            <a href="#" class="club type2  clearfix">
-                <span class="date">2023. 04. 10.</span>
+                        <a href="#">자세히 보기</a>
 
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
                     </div>
-                </div>
+                </li>
 
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
+                <li class="sclub type3 active clearfix">
+                    <div class="off"></div>
+                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
+                    <div class="sclub_info">
 
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
+                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="sclub_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-                <p class="btn">♡</p>
-            </a>
+                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
 
-            <a href="#" class="club type3  clearfix">
-                <span class="date">2023. 04. 10.</span>
+                        <a href="#">자세히 보기</a>
 
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
                     </div>
-                </div>
+                </li>
 
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
+                <li class="sclub type4 clearfix">
+                    <div class="off"></div>
+                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
+                    <div class="sclub_info">
 
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
+                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="sclub_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-                <p class="btn">♡</p>
-            </a>
+                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
 
-            <a href="#" class="club type4  clearfix">
-                <span class="date">2023. 04. 10.</span>
+                        <a href="#">자세히 보기</a>
 
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
                     </div>
-                </div>
+                </li>
 
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
+                <li class="sclub type5 clearfix">
+                    <div class="off"></div>
+                    <div class="sclub_cover"><img src="img/Champions_of_Midgard.png" alt="7wonders"></div>
+                    <div class="sclub_info">
 
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
+                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="sclub_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-                <p class="btn">♡</p>
-            </a>
+                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
 
-            <a href="#" class="club type5  clearfix">
-                <span class="date">2023. 04. 10.</span>
+                        <a href="#">자세히 보기</a>
 
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
                     </div>
-                </div>
+                </li>
 
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
-
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
-
-                <p class="btn">♡</p>
-            </a>
-
-            <a href="#" class="club type6  clearfix">
-                <span class="date">2023. 04. 10.</span>
-
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
-                    </div>
-                </div>
-
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
-
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
-
-                <p class="btn">♡</p>
-            </a>
-
-            <a href="#" class="club typeE  clearfix">
-                <span class="end"></span>
-                <span class="date">2023. 04. 10.</span>
-
-                <div class="club_info">
-                    <img src="img/peakyblinders.png" alt="peakyblinders">
-                    <div class="club_title">
-                        <p class="club_name">셸비가문의 보드게임 여행</p>
-                        <span class="board_game"> - peaky blinders</span>
-                        <span class="hashtag">#Crime</span>
-                        <span class="hashtag">#Drama</span>
-                        <span class="hashtag">#Offline</span>
-                        <span class="hashtag">#business</span>
-                        <span class="hashtag">#Card</span>
-                        <span class="hashtag">#10reps</span>
-                    </div>
-                </div>
-
-                <div class="progress_box">
-                    <p>참여율</p>
-                    <div class="progress_bar"><span class="progress"></span></div>
-                    <p class="per">60%</p>
-                </div>
-
-                <div class="participate">
-                    <img src="img/user.png" alt="leader">
-                    <span class="plus">+</span>
-                    <span class="left">2 Days Left</span>
-                </div>
-
-                <p class="btn">♡</p>
-            </a>
-
-
+            </ul>
 
         </div>
+
+    </section>
+
+    <section id="boardgame_club_list">
+        
+        <h3>Boardgame Club</h3>
+
+        <div class="club_index">
+
+            <!--검색/form태그 추가--->
+            <form name="searchfrm" method="get" action="#">
+                <div class="searchBox">
+                    <div class="keyword"><input type="text" name="search" placeholder="검색어를 입력해 주세요."></div>
+                    <button>검색</button>
+                </div>
+            </form>
+            <ul class="index_wrap clearfix">
+                <li class="active">전체 클럽</li>
+                <li>오프라인 클럽</li>
+                <li>온라인 클럽</li>
+                <li><a href="#">클럽 제안하기</a></li>
+            </ul>
+
+        </div>
+
+
+        <div class="inner_club_list">
+
+            <div class="club_wraps clearfix">
+
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/7wonders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/Champions_of_Midgard.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/Paladins_of_the_West_Kingdom.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/Roll_Player_Adventures.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/Feed_the_Kraken.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/Pandemic_Legacy.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+                <a href="#" class="club">
+                    <img src="img/Terraforming_Mars.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
+                        <p class="club_moder">by green</p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="reviews">
 
         <div class="review_tap">
             <p class="review_title">Recently Review</p>
