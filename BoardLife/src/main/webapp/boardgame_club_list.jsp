@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
     
     <jsp:include page="header.jsp"/>
-<!DOCTYPE html>
-<html lang="ko">
 
     <link rel="stylesheet" href="css/boardgameclub.css" type="text/css">
+    <script src="js/boardgame_club_list.js"></script>
+    
 
      <section id="club_slider">
 
