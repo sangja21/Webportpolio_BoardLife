@@ -2,7 +2,8 @@ package vo;
 
 public class offer_club {
 	
-	String club_title, user_id, b_id, club_place, club_day, club_time, club_detail, start_date, finish_date, club_reps;
+	String club_title, user_id, b_id, club_place, club_day, club_time, club_intro, club_detail, start_date, finish_date, offer_date, approve_date;
+	int	club_num, club_reps, capacity, membership_fee;
 	
 	public String getClub_title() {
 		return club_title;
@@ -40,6 +41,12 @@ public class offer_club {
 	public void setClub_time(String club_time) {
 		this.club_time = club_time;
 	}
+	public String getClub_intro() {
+		return club_intro;
+	}
+	public void setClub_intro(String club_intro) {
+		this.club_intro = club_intro;
+	}
 	public String getClub_detail() {
 		return club_detail;
 	}
@@ -58,10 +65,28 @@ public class offer_club {
 	public void setFinish_date(String finish_date) {
 		this.finish_date = finish_date;
 	}
-	public String getClub_reps() {
+	public String getOffer_date() {
+		return offer_date;
+	}
+	public void setOffer_date(String offer_date) {
+		this.offer_date = offer_date;
+	}
+	public String getApprove_date() {
+		return approve_date;
+	}
+	public void setApprove_date(String approve_date) {
+		this.approve_date = approve_date;
+	}
+	public int getClub_num() {
+		return club_num;
+	}
+	public void setClub_num(int club_num) {
+		this.club_num = club_num;
+	}
+	public int getClub_reps() {
 		return club_reps;
 	}
-	public void setClub_reps(String club_reps) {
+	public void setClub_reps(int club_reps) {
 		this.club_reps = club_reps;
 	}
 	public int getCapacity() {
@@ -76,5 +101,5 @@ public class offer_club {
 	public void setMembership_fee(int membership_fee) {
 		this.membership_fee = membership_fee;
 	}
-	int capacity, membership_fee;
+	
 }

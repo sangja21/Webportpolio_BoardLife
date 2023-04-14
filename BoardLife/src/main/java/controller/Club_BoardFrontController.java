@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import vo.ActionForward;
 
-@WebServlet("*.bo") 
+@WebServlet("*.cl") 
 // 앞에 뭐가들어오든, .bo로 끝나는 모든 url은 controller를 타고 들어온다는 의미
 // db작업 진행방향은 action으로 향하게 됨
 // dao를 만들어서 svc단에서 데이터처리를 함
-public class BoardFrontController extends javax.servlet.http.HttpServlet 
+public class Club_BoardFrontController extends javax.servlet.http.HttpServlet 
 {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
