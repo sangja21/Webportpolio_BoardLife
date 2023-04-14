@@ -4,7 +4,7 @@ import static db.JdbcUtil.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import dao.Club_Function_DAO;
-import vo.offer_club;
+import vo.Offer_club;
 
 public class Club_BoardListService {
 
@@ -19,9 +19,9 @@ public class Club_BoardListService {
 		
 	}
 
-	public ArrayList<offer_club> getArticleList(int page, int limit) throws Exception{
+	public ArrayList<Offer_club> getArticleList(int page, int limit) throws Exception{
 		
-		ArrayList<offer_club> articleList = null;
+		ArrayList<Offer_club> articleList = null;
 		Connection con = getConnection();
 		Club_Function_DAO boardDAO = Club_Function_DAO.getInstance();
 		boardDAO.setConnection(con);

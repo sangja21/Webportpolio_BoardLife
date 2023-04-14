@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import svc.Club_BoardListService;
 import vo.ActionForward;
 import vo.Club_PageInfo;
-import vo.offer_club;
+import vo.Offer_club;
 
  public class Club_BoardListAction implements Action {
 	 
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 
-		ArrayList<offer_club> articleList=new ArrayList<offer_club>();
+		ArrayList<Offer_club> articleList=new ArrayList<Offer_club>();
 	  	int page=1;
 		int limit=10;
 		

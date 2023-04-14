@@ -1,7 +1,21 @@
+<%@page import="vo.Club_PageInfo"%>
+<%@page import="vo.Offer_club"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+
     <jsp:include page="header.jsp"/>
+    
+<%
+ArrayList<Offer_club> ClubList=(ArrayList<Offer_club>)request.getAttribute("ClubList");
+    Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("Club_pageInfo");
+	int listCount=pageInfo.getListCount();
+	int nowPage=pageInfo.getPage();
+	int maxPage=pageInfo.getMaxPage();
+	int startPage=pageInfo.getStartPage();
+	int endPage=pageInfo.getEndPage();
+%>
 
     <link rel="stylesheet" href="css/boardgameclub.css" type="text/css">
     <script src="js/boardgame_club_list.js"></script>
@@ -128,7 +142,7 @@
         <div class="inner_club_list">
 
             <div class="club_wraps clearfix">
-
+		<% // for(int i=0; i < ClubList.size(); i++){ %>
                 <a href="#" class="club">
                     <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
 

@@ -28,7 +28,7 @@ public class Shop_BoardFrontController extends javax.servlet.http.HttpServlet
 		ActionForward forward=null;
 		Action action=null;
 		
-		if(command.equals("/*.bo")){
+		if(command.equals("/*.sh")){
 			forward=new ActionForward();
 			forward.setPath("/*.jsp");
 		}

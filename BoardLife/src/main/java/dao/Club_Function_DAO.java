@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 
-import vo.offer_club;
+import vo.Offer_club;
 
 public class Club_Function_DAO {
 	// 쿼리문 실행을 담당하는 클래스
@@ -58,13 +58,13 @@ public class Club_Function_DAO {
 		
 	} // club_selectListCount()
 	
-	public ArrayList<offer_club> selectClubList(int page, int limit){
+	public ArrayList<Offer_club> selectClubList(int page, int limit){
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String club_list_sql="select * from board offer_club order by club_num desc limit ?,12";
-		ArrayList<offer_club> clubList = new ArrayList<offer_club>();
-		offer_club Club = null;
+		ArrayList<Offer_club> clubList = new ArrayList<Offer_club>();
+		Offer_club Club = null;
 		int startrow = (page-1)*10;
 		
 		try {
@@ -74,7 +74,7 @@ public class Club_Function_DAO {
 			
 			
 			while(rs.next()) {
-				Club = new offer_club();
+				Club = new Offer_club();
 				Club.setClub_num(rs.getInt("club_num"));
 				Club.setClub_title(rs.getString("club_title"));
 				Club.setClub_intro(rs.getString("club_intro"));

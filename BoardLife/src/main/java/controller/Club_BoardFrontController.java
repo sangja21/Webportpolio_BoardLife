@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.Club_BoardListAction;
 import vo.ActionForward;
 
 @WebServlet("*.cl") 
-// 앞에 뭐가들어오든, .bo로 끝나는 모든 url은 controller를 타고 들어온다는 의미
+// 앞에 뭐가들어오든, .bo로 끝나는 모든 url은 controller를 타고들어온다는 의미
 // db작업 진행방향은 action으로 향하게 됨
 // dao를 만들어서 svc단에서 데이터처리를 함
 public class Club_BoardFrontController extends javax.servlet.http.HttpServlet 
@@ -28,22 +29,39 @@ public class Club_BoardFrontController extends javax.servlet.http.HttpServlet
 		ActionForward forward=null;
 		Action action=null;
 		
-		if(command.equals("/*.bo")){
-			forward=new ActionForward();
-			forward.setPath("/*.jsp");
+		if(command.equals("/Club_boardList.cl")){
+			action = new Club_BoardListAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 		
+		if(forward != null){
+			
+			if(forward.isRedirect()){
+				response.sendRedirect(forward.getPath());
+			}else{
+				RequestDispatcher dispatcher=
+						request.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(request, response);
+			}
+			
+		}
+		
+		
 	} // doProcess
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		doProcess(request,response);
-	}  	// doGet method
+		
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+				throws ServletException, IOException {
+			doProcess(request,response);
+		}  	// doGet method
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		doProcess(request,response);
-	}   // doPost method
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+				throws ServletException, IOException {
+			doProcess(request,response);
+		}   // doPost method
 	
 } // class BoardFrontController
 	

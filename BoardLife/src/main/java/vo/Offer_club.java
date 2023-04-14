@@ -1,6 +1,6 @@
 package vo;
 
-public class offer_club {
+public class Offer_club {
 	
 	String club_title, user_id, b_id, club_place, club_day, club_time, club_intro, club_detail, start_date, finish_date, offer_date, approve_date;
 	int	club_num, club_reps, capacity, membership_fee;
