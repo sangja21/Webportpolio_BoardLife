@@ -6,24 +6,24 @@ import javax.servlet.http.HttpServletResponse;
 import svc.Club_BoardListService;
 import vo.ActionForward;
 import vo.Club_PageInfo;
-import vo.Offer_club;
+import vo.Offerclub;
 
  public class Club_BoardListAction implements Action {
 	 
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 
-		ArrayList<Offer_club> articleList=new ArrayList<Offer_club>();
+		ArrayList<Offerclub> club_List=new ArrayList<Offerclub>();
 	  	int page=1;
-		int limit=10;
+		int limit=12;
 		
 		if(request.getParameter("page")!=null){
 			page=Integer.parseInt(request.getParameter("page"));
 		}
 
 		
-		Club_BoardListService boardListService = new Club_BoardListService();
-		int listCount=boardListService.getListCount();
-		articleList = boardListService.getArticleList(page,limit);
+		Club_BoardListService Club_boardListService = new Club_BoardListService();
+		int listCount=Club_boardListService.getListCount();
+		club_List = Club_boardListService.getclubList(page,limit);
    		int maxPage=(int)((double)listCount/limit+0.95); 
    		int startPage = (((int) ((double)page / 10 + 0.9)) - 1) * 10 + 1;
    	    int endPage = startPage+10-1;
@@ -37,9 +37,9 @@ import vo.Offer_club;
 		pageInfo.setPage(page);
 		pageInfo.setStartPage(startPage);	
 		request.setAttribute("pageInfo", pageInfo);
-		request.setAttribute("articleList", articleList);
+		request.setAttribute("club_List", club_List);
 		ActionForward forward= new ActionForward();
-   		forward.setPath("/qna_board_list.jsp");
+   		forward.setPath("/boardgame_club_list.jsp");
    		return forward;
    		
 	 }

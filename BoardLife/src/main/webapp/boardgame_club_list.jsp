@@ -1,21 +1,20 @@
-<%@page import="vo.Club_PageInfo"%>
-<%@page import="vo.Offer_club"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="vo.Club_PageInfo"%>
+<%@ page import="vo.Offerclub"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 
     <jsp:include page="header.jsp"/>
     
 <%
-ArrayList<Offer_club> ClubList=(ArrayList<Offer_club>)request.getAttribute("ClubList");
-    Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("Club_pageInfo");
-	int listCount=pageInfo.getListCount();
-	int nowPage=pageInfo.getPage();
-	int maxPage=pageInfo.getMaxPage();
-	int startPage=pageInfo.getStartPage();
-	int endPage=pageInfo.getEndPage();
-%>
+    ArrayList<Offerclub> Club_List=(ArrayList<Offerclub>)request.getAttribute("club_List");
+    Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("pageInfo");
+    int listCount=pageInfo.getListCount();
+    int nowPage=pageInfo.getPage();
+    int maxPage=pageInfo.getMaxPage();
+    int startPage=pageInfo.getStartPage();
+    int endPage=pageInfo.getEndPage();
+    %>
 
     <link rel="stylesheet" href="css/boardgameclub.css" type="text/css">
     <script src="js/boardgame_club_list.js"></script>
@@ -142,18 +141,18 @@ ArrayList<Offer_club> ClubList=(ArrayList<Offer_club>)request.getAttribute("Club
         <div class="inner_club_list">
 
             <div class="club_wraps clearfix">
-		<% // for(int i=0; i < ClubList.size(); i++){ %>
-                <a href="#" class="club">
+            
+            <a href="#" class="club">
                     <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
 
                     <div class="club_info">
-                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="club_moder">by green</p>
+                        <p class="club_title"><%= Club_List.size() %></p>
+                        <p class="club_moder"><%= "그래가지고"%></p>
                         <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
                         <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
                     </div>
-
+                    
                     <div class="lower">
                         <div class="participate clearfix">
                             <img src="img/user.png" alt="user">
@@ -162,6 +161,28 @@ ArrayList<Offer_club> ClubList=(ArrayList<Offer_club>)request.getAttribute("Club
                     </div>
 
                 </a>
+            
+		<%  for(int i=0; i < Club_List.size(); i++ ){ %>
+                <a href="#" class="club">
+                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+
+                    <div class="club_info">
+                        <p class="club_title"><%= "peaky fokin blinders" %></p>
+                        <p class="club_moder"><%= "그래가지고"%></p>
+                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+
+                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                    </div>
+                    
+                    <div class="lower">
+                        <div class="participate clearfix">
+                            <img src="img/user.png" alt="user">
+                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                        </div>
+                    </div>
+
+                </a>
+        <% } %>
 
             </div>
 

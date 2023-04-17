@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 
-import vo.Offer_club;
+import vo.Offerclub;
 
 public class Club_Function_DAO {
 	// 쿼리문 실행을 담당하는 클래스
@@ -39,8 +39,11 @@ public class Club_Function_DAO {
 		ResultSet rs = null;
 		
 		try {
-			pstmt = con.prepareStatement("select count(*) from offer_club");
+			pstmt = con.prepareStatement("select count(*) from offer_club;");
 			// offer_club table에 있는 자료들의 숫자를 세어보는 쿼리문
+			
+			System.out.println("select count(*) from offer_club");
+			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -58,23 +61,32 @@ public class Club_Function_DAO {
 		
 	} // club_selectListCount()
 	
-	public ArrayList<Offer_club> selectClubList(int page, int limit){
+	public ArrayList<Offerclub> selectClubList(int page, int limit){
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String club_list_sql="select * from board offer_club order by club_num desc limit ?,12";
-		ArrayList<Offer_club> clubList = new ArrayList<Offer_club>();
-		Offer_club Club = null;
-		int startrow = (page-1)*10;
+		String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
+		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
+		Offerclub Club = null;
+		//int startrow = (page-1)*12;
 		
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
-			pstmt.setInt(1, startrow);
+			
+			System.out.println("prepareStatement");
+			//System.out.println("startrow" + startrow);
+			
+			//pstmt.setInt(1, startrow);
+			
+			//System.out.println("pstmt.setInt(1, startrow)");
+			
 			rs = pstmt.executeQuery();
 			
+			System.out.println("executeQuery");
 			
 			while(rs.next()) {
-				Club = new Offer_club();
+				Club = new Offerclub();
 				Club.setClub_num(rs.getInt("club_num"));
 				Club.setClub_title(rs.getString("club_title"));
 				Club.setClub_intro(rs.getString("club_intro"));
@@ -88,17 +100,19 @@ public class Club_Function_DAO {
 				Club.setMembership_fee(rs.getInt("Membership_fee"));
 				Club.setCapacity(rs.getInt("capacity"));
 				clubList.add(Club);
+				System.out.println("헤치웠나?");
 			}
 			
 		} catch(Exception ex) {
+			
+			ex.printStackTrace();
+			
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		
 		return clubList;
-		
-		
 	} // selectClubList();
 	
 

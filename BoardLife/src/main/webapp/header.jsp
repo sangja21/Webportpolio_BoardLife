@@ -93,9 +93,8 @@
 
                     <ul class="bd_club none">
                         <li class="menu_title">보드게임 클럽</li>
-                        <li><a href="#">온라인 클럽</a></li>
-                        <li><a href="boardgame_club_list.jsp">오프라인 클럽</a></li>
-                        <li><a href="#">장소 예약</a></li>
+                        <li><a href="Club_boardList.cl">전체 클럽</a></li>
+                        <li><a href="#">보드게임 카페</a></li>
                     </ul>
 
                     <ul class="bd_shop none">

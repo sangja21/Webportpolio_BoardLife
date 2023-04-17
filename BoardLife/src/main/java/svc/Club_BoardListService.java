@@ -4,7 +4,7 @@ import static db.JdbcUtil.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import dao.Club_Function_DAO;
-import vo.Offer_club;
+import vo.Offerclub;
 
 public class Club_BoardListService {
 
@@ -19,16 +19,18 @@ public class Club_BoardListService {
 		
 	}
 
-	public ArrayList<Offer_club> getArticleList(int page, int limit) throws Exception{
+	public ArrayList<Offerclub> getclubList(int page, int limit) throws Exception{
+		System.out.println("getclubList");
 		
-		ArrayList<Offer_club> articleList = null;
+		ArrayList<Offerclub> clubList = null;
 		Connection con = getConnection();
 		Club_Function_DAO boardDAO = Club_Function_DAO.getInstance();
+		// Club_Fuction_DAO의 싱글톤 패턴 코드
 		boardDAO.setConnection(con);
-		articleList = boardDAO.selectClubList(page,limit);
+		clubList = boardDAO.selectClubList(page,limit);
 		close(con);
-		return articleList;
 		
+		return clubList;
 	}
 
 }
