@@ -42,7 +42,7 @@ public class Club_Function_DAO {
 			pstmt = con.prepareStatement("select count(*) from offer_club;");
 			// offer_club table에 있는 자료들의 숫자를 세어보는 쿼리문
 			
-			System.out.println("select count(*) from offer_club");
+			//System.out.println("select count(*) from offer_club");
 			
 			rs = pstmt.executeQuery();
 			
@@ -74,7 +74,7 @@ public class Club_Function_DAO {
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
 			
-			System.out.println("prepareStatement");
+			//System.out.println("prepareStatement");
 			//System.out.println("startrow" + startrow);
 			
 			//pstmt.setInt(1, startrow);
@@ -83,7 +83,7 @@ public class Club_Function_DAO {
 			
 			rs = pstmt.executeQuery();
 			
-			System.out.println("executeQuery");
+			//System.out.println("executeQuery");
 			
 			while(rs.next()) {
 				Club = new Offerclub();
@@ -96,11 +96,12 @@ public class Club_Function_DAO {
 				Club.setClub_place(rs.getString("club_place"));
 				Club.setClub_time(rs.getString("club_time"));
 				Club.setClub_reps(rs.getInt("club_reps"));
-				Club.setStart_date(rs.getString("club_date"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
 				Club.setMembership_fee(rs.getInt("Membership_fee"));
 				Club.setCapacity(rs.getInt("capacity"));
+				Club.setOffer_date(rs.getString("Offer_date"));
 				clubList.add(Club);
-				System.out.println("헤치웠나?");
 			}
 			
 		} catch(Exception ex) {

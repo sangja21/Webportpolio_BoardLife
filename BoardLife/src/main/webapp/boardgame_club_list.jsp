@@ -142,42 +142,29 @@
 
             <div class="club_wraps clearfix">
             
-            <a href="#" class="club">
-                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
-
-                    <div class="club_info">
-                        <p class="club_title"><%= Club_List.size() %></p>
-                        <p class="club_moder"><%= "그래가지고"%></p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-                    </div>
-                    
-                    <div class="lower">
-                        <div class="participate clearfix">
-                            <img src="img/user.png" alt="user">
-                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
-                        </div>
-                    </div>
-
-                </a>
-            
 		<%  for(int i=0; i < Club_List.size(); i++ ){ %>
                 <a href="#" class="club">
                     <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
 
                     <div class="club_info">
-                        <p class="club_title"><%= "peaky fokin blinders" %></p>
-                        <p class="club_moder"><%= "그래가지고"%></p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+                        <p class="club_title"><%= Club_List.get(i).getClub_title() %></p>
+                        <p class="club_moder">by <%= Club_List.get(i).getUser_id() %></p>
+                        <p class="hashtag"><span>#<%= Club_List.get(i).getClub_reps() %>회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
-                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                        <p class="club_detail"><%= Club_List.get(i).getClub_intro() %></p>
                     </div>
                     
                     <div class="lower">
                         <div class="participate clearfix">
                             <img src="img/user.png" alt="user">
-                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                            <p>
+                            23. 04. <%=Club_List.get(i).getStart_date().substring(4)%> 
+                            | <%= Club_List.get(i).getClub_day() %> 
+                            | <%= Club_List.get(i).getClub_time() %>시 
+                            | <%= Club_List.get(i).getClub_place().substring(0, 2) %> 
+                            | 1/<%= Club_List.get(i).getCapacity() %>명 
+                            | <%= Club_List.get(i).getMembership_fee() %>원
+                            </p>
                         </div>
                     </div>
 
