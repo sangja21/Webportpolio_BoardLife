@@ -1,8 +1,10 @@
 <%@ page import="vo.Club_PageInfo"%>
 <%@ page import="vo.Offerclub"%>
+<%@ page import="dao.Club_Function_DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat"%>
+
 
     <jsp:include page="header.jsp"/>
     
@@ -14,6 +16,8 @@
     int maxPage=pageInfo.getMaxPage();
     int startPage=pageInfo.getStartPage();
     int endPage=pageInfo.getEndPage();
+ 
+    String Bnum = null;
     %>
 
     <link rel="stylesheet" href="css/boardgameclub.css" type="text/css">
@@ -144,7 +148,9 @@
             
 		<%  for(int i=0; i < Club_List.size(); i++ ){ %>
                 <a href="#" class="club">
-                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+                <% Bnum = Club_List.get(i).getB_id(); %>
+                
+                    <img src="img/<%= Club_List.get(i).getB_img() %>" alt="7wonders" class="boardgame">
 
                     <div class="club_info">
                         <p class="club_title"><%= Club_List.get(i).getClub_title() %></p>
