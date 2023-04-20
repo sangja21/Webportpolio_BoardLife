@@ -35,7 +35,7 @@
         <col width="400px"><!--제목(한글)-->
         <col width="25%"><!--출시년도-->
 	 	<col width="30%"><!--유저 평점-->
-        <col width="10%"><!---->
+        <col width="10%"><!-- 거짓말이야-->
 	</colgroup>
 
     <thead>
