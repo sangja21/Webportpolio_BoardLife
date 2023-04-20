@@ -24,7 +24,7 @@ import vo.Offerclub;
 		Club_BoardListService Club_boardListService = new Club_BoardListService();
 		
 		String key = request.getParameter("search");
-		System.out.println(key);
+
 		// 검색어 값을 받아옴
 		
 		if(key != null) {
@@ -53,6 +53,7 @@ import vo.Offerclub;
 		pageInfo.setMaxPage(maxPage);
 		pageInfo.setPage(page);
 		pageInfo.setStartPage(startPage);	
+		
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("club_List", club_List);
 		ActionForward forward= new ActionForward();

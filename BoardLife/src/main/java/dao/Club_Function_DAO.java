@@ -93,7 +93,7 @@ public class Club_Function_DAO {
 			//System.out.println("pstmt.setInt(1, startrow)");
 			
 			rs = pstmt.executeQuery();
-			System.out.println(rs);
+			//System.out.println(rs);
 			//System.out.println("executeQuery");
 			
 			while(rs.next()) {
@@ -190,6 +190,61 @@ public class Club_Function_DAO {
 		
 		return clubList;
 	} // searchClubList();
+	
+	public Offerclub selectClub(int ClubNum) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Offerclub Club = null;
+		
+		String club_list_sql=
+				"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+				+"bg.b_img, bg.b_theme, bg.proceed"
+				+ " FROM offer_club oc, board_game bg"
+				+ " WHERE oc.b_id = bg.b_id"
+				+ " AND oc.club_num =" + ClubNum + ";";
+		
+		System.out.println(club_list_sql);
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			//System.out.println("실행");
+			rs = pstmt.executeQuery();
+			
+			// System.out.println(rs);
+			
+			if(rs.next()) {
+				Club = new Offerclub();
+				Club.setClub_num(rs.getInt("club_num"));
+				Club.setClub_title(rs.getString("club_title"));
+				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setUser_id(rs.getString("user_id"));
+				Club.setClub_day(rs.getString("club_day"));
+				Club.setClub_place(rs.getString("club_place"));
+				Club.setClub_time(rs.getString("club_time"));
+				Club.setClub_reps(rs.getInt("club_reps"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
+				Club.setMembership_fee(rs.getInt("membership_fee"));
+				Club.setCapacity(rs.getInt("capacity"));
+				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
+			}
+			
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
+			ex.printStackTrace();
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return Club;
+	} // selectClub
 	
 
 } // Function_DAO.class

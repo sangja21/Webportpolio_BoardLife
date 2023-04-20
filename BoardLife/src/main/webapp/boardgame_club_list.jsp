@@ -16,6 +16,8 @@
     int maxPage=pageInfo.getMaxPage();
     int startPage=pageInfo.getStartPage();
     int endPage=pageInfo.getEndPage();
+    
+    String key = (String)request.getParameter("search");
  
     String Bnum = null;
     %>
@@ -128,7 +130,7 @@
             <!--검색/form태그 추가--->
             <form name="searchfrm" method="get" action="/BoardLife/Club_boardList.cl">
                 <div class="searchBox">
-                    <div class="keyword"><input type="text" name="search" placeholder="검색어를 입력해 주세요."></div>
+                    <div class="keyword"><input type="text" name="search" placeholder="<% if(key == "" || key == null){ out.print("검색어를 입력해주세요."); } else { out.print(key); } %>"></div>
                     <button>검색</button>
                 </div>
             </form>
@@ -147,7 +149,7 @@
             <div class="club_wraps clearfix">
             
 		<%  for(int i=0; i < Club_List.size(); i++ ){ %>
-                <a href="boardgame_club_view.html" class="club">
+                <a href="ClubDetail.cl?clubNum=<%=Club_List.get(i).getClub_num()%>&page=<%=nowPage%>" class="club">
                 <% Bnum = Club_List.get(i).getB_id(); %>
                 
                     <img src="img/<%= Club_List.get(i).getB_img() %>" alt="<%= Club_List.get(i).getB_img() %>" class="boardgame">

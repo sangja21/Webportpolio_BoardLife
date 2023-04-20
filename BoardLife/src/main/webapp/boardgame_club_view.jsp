@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@page import="vo.Offerclub" %> 
 <jsp:include page="header.jsp"/>
 <link rel="stylesheet" href="css/boardgameclub_view.css">
+
+<%
+	Offerclub club = (Offerclub)request.getAttribute("club");
+    String nowPage = (String)request.getAttribute("page");
+%>
 
 <section id="boardgame_club_view">
 
@@ -12,7 +17,7 @@
                 <span class="cover"></span>
                 <img src="img/peakyblinders.png" alt="peakyblinders">
                 <p class="boardgame_detail">
-                    <span class="title">Peaky Blinders: Under New Management (2019)</span>
+                    <span class="title"> PeakyfokinBlinders </span>
                     <br>
                     <span class="description">Create and manage your criminal network in a gang war set in 1920's England.</span>
                 </p>
@@ -22,7 +27,7 @@
 
                 <div class="club_detail">
 
-                    <p class="club_title">톰 셸비와 함께하는 보드게임 여행</p>
+                    <p class="club_title"><%= club.getClub_title() %></p>
                     <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
                     <div class="user_info clearfix">
