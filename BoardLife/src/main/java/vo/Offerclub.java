@@ -2,7 +2,7 @@ package vo;
 
 public class Offerclub {
 	
-	String club_title, user_id, b_id, club_place, club_day, club_time, club_intro, club_detail, start_date, finish_date, offer_date, approve_date, b_img;
+	String club_title, user_id, b_id, club_place, club_day, club_time, club_intro, club_detail, start_date, finish_date, offer_date, approve_date, b_img, b_theme, proceed;
 	int	club_num, club_reps, capacity, membership_fee;
 	
 	public String getClub_title() {
@@ -82,6 +82,18 @@ public class Offerclub {
 	}
 	public void setB_img(String b_img) {
 		this.b_img = b_img;
+	}
+	public String getB_theme() {
+		return b_theme;
+	}
+	public void setB_theme(String b_theme) {
+		this.b_theme = b_theme;
+	}
+	public String getProceed() {
+		return proceed;
+	}
+	public void setProceed(String proceed) {
+		this.proceed = proceed;
 	}
 	public int getClub_num() {
 		return club_num;

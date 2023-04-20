@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.Club_BoardListAction;
+import action.Club_DetailAction;
 import vo.ActionForward;
 
 @WebServlet("*.cl") 
@@ -31,6 +32,15 @@ public class Club_BoardFrontController extends javax.servlet.http.HttpServlet
 		
 		if(command.equals("/Club_boardList.cl")){
 			action = new Club_BoardListAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/ClubDetail.cl")) {
+			action = new Club_DetailAction();
+			// ClubAction 객체 생성하여 서블릿 페이지 실행
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){

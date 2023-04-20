@@ -22,8 +22,25 @@ import vo.Offerclub;
 
 		
 		Club_BoardListService Club_boardListService = new Club_BoardListService();
+		
+		String key = request.getParameter("search");
+
+		// 검색어 값을 받아옴
+		
+		if(key != null) {
+			// 검색어가 있는지 확인
+			// 검색어가 존재할 경우
+			club_List = Club_boardListService.searchclubList(page, limit, key);
+			//System.out.println("hold on");
+			
+		} else {
+			//검색어가 존재하지 않을 경우
+			club_List = Club_boardListService.getclubList(page,limit);
+		}
+		
 		int listCount=Club_boardListService.getListCount();
-		club_List = Club_boardListService.getclubList(page,limit);
+		
+		
    		int maxPage=(int)((double)listCount/limit+0.95); 
    		int startPage = (((int) ((double)page / 10 + 0.9)) - 1) * 10 + 1;
    	    int endPage = startPage+10-1;
@@ -36,6 +53,7 @@ import vo.Offerclub;
 		pageInfo.setMaxPage(maxPage);
 		pageInfo.setPage(page);
 		pageInfo.setStartPage(startPage);	
+		
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("club_List", club_List);
 		ActionForward forward= new ActionForward();

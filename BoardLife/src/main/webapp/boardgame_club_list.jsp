@@ -16,6 +16,8 @@
     int maxPage=pageInfo.getMaxPage();
     int startPage=pageInfo.getStartPage();
     int endPage=pageInfo.getEndPage();
+    
+    String key = (String)request.getParameter("search");
  
     String Bnum = null;
     %>
@@ -126,9 +128,9 @@
         <div class="club_index">
 
             <!--검색/form태그 추가--->
-            <form name="searchfrm" method="get" action="#">
+            <form name="searchfrm" method="get" action="/BoardLife/Club_boardList.cl">
                 <div class="searchBox">
-                    <div class="keyword"><input type="text" name="search" placeholder="검색어를 입력해 주세요."></div>
+                    <div class="keyword"><input type="text" name="search" placeholder="<% if(key == "" || key == null){ out.print("검색어를 입력해주세요."); } else { out.print(key); } %>"></div>
                     <button>검색</button>
                 </div>
             </form>
@@ -147,15 +149,15 @@
             <div class="club_wraps clearfix">
             
 		<%  for(int i=0; i < Club_List.size(); i++ ){ %>
-                <a href="#" class="club">
+                <a href="ClubDetail.cl?clubNum=<%=Club_List.get(i).getClub_num()%>&page=<%=nowPage%>" class="club">
                 <% Bnum = Club_List.get(i).getB_id(); %>
                 
-                    <img src="img/<%= Club_List.get(i).getB_img() %>" alt="7wonders" class="boardgame">
+                    <img src="img/<%= Club_List.get(i).getB_img() %>" alt="<%= Club_List.get(i).getB_img() %>" class="boardgame">
 
                     <div class="club_info">
                         <p class="club_title"><%= Club_List.get(i).getClub_title() %></p>
                         <p class="club_moder">by <%= Club_List.get(i).getUser_id() %></p>
-                        <p class="hashtag"><span>#<%= Club_List.get(i).getClub_reps() %>회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+                        <p class="hashtag"><span>#<%= Club_List.get(i).getClub_reps() %>회차</span><span>#<%= Club_List.get(i).getProceed() %></span><span>#Offline</span></p>
 
                         <p class="club_detail"><%= Club_List.get(i).getClub_intro() %></p>
                     </div>

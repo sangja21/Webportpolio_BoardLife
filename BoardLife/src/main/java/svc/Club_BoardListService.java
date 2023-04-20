@@ -20,7 +20,6 @@ public class Club_BoardListService {
 	}
 
 	public ArrayList<Offerclub> getclubList(int page, int limit) throws Exception{
-		System.out.println("getclubList");
 		
 		ArrayList<Offerclub> clubList = null;
 		Connection con = getConnection();
@@ -29,6 +28,20 @@ public class Club_BoardListService {
 		boardDAO.setConnection(con);
 		clubList = boardDAO.selectClubList(page,limit);
 		close(con);
+		
+		return clubList;
+	}
+	
+	public ArrayList<Offerclub> searchclubList(int page, int limit, String key) throws Exception{
+		
+		ArrayList<Offerclub> clubList = null;
+		Connection con = getConnection();
+		Club_Function_DAO boardDAO = Club_Function_DAO.getInstance();
+		// Club_Fuction_DAO의 싱글톤 패턴 코드
+		boardDAO.setConnection(con);
+		clubList = boardDAO.searchClubList(page,limit,key);
+		close(con);
+		//System.out.println(page + "," + limit + "," + key);
 		
 		return clubList;
 	}

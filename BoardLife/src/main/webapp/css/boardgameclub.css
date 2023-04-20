@@ -401,6 +401,9 @@ body {
 
 .club .club_info .hashtag {
     margin: 10px 0;
+    height: 20px;
+    line-height: 16px;
+    overflow: hidden;
 }
 
 .club .club_info .hashtag span {
@@ -408,7 +411,7 @@ body {
     padding: 2px 5px;
     border-radius: 10px;
     font-size: 10px;
-    margin-right: 10px;
+    margin-right: 4px;
     color: #666;
 }
 

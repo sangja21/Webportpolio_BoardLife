@@ -63,14 +63,15 @@ public class Club_Function_DAO {
 	} // club_selectListCount()
 	
 	public ArrayList<Offerclub> selectClubList(int page, int limit){
-		
+		// 전체 클럽 목록을 출력하는 메서드
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		// String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
 		
 		String club_list_sql=
-		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee, bg.b_img"
+		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+		+		" bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE oc.b_id = bg.b_id"
 		+ " ORDER BY club_num DESC"
@@ -92,7 +93,7 @@ public class Club_Function_DAO {
 			//System.out.println("pstmt.setInt(1, startrow)");
 			
 			rs = pstmt.executeQuery();
-			
+			//System.out.println(rs);
 			//System.out.println("executeQuery");
 			
 			while(rs.next()) {
@@ -110,6 +111,8 @@ public class Club_Function_DAO {
 				Club.setMembership_fee(rs.getInt("Membership_fee"));
 				Club.setCapacity(rs.getInt("capacity"));
 				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
 				clubList.add(Club);
 			}
 			
@@ -127,35 +130,121 @@ public class Club_Function_DAO {
 	} // selectClubList();
 	
 	
-	public String boardgame_img(String b_id) {
+	public ArrayList<Offerclub> searchClubList(int page, int limit, String key){
+		// 전체 클럽 목록을 출력하는 메서드
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		// String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
+		
+		String club_list_sql=
+		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " FROM offer_club oc, board_game bg"
+		+ " WHERE oc.b_id = bg.b_id AND oc.club_title like '%" + key +"%'"
+		+ " ORDER BY club_num DESC";
+		
+		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
+
+		Offerclub Club = null;
+		
+		//System.out.println(club_list_sql);
+
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			//System.out.println("실행");
+			rs = pstmt.executeQuery();
+			
+			System.out.println(rs);
+			
+			while(rs.next()) {
+				Club = new Offerclub();
+				Club.setClub_num(rs.getInt("club_num"));
+				Club.setClub_title(rs.getString("club_title"));
+				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setUser_id(rs.getString("user_id"));
+				Club.setClub_day(rs.getString("club_day"));
+				Club.setClub_place(rs.getString("club_place"));
+				Club.setClub_time(rs.getString("club_time"));
+				Club.setClub_reps(rs.getInt("club_reps"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
+				Club.setMembership_fee(rs.getInt("membership_fee"));
+				Club.setCapacity(rs.getInt("capacity"));
+				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
+				clubList.add(Club);
+			}
+			
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
+			ex.printStackTrace();
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return clubList;
+	} // searchClubList();
+	
+	public Offerclub selectClub(int ClubNum) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Boardgames2 bg = null;
+		Offerclub Club = null;
 		
-		try{
-			pstmt = con.prepareStatement(
-					"select b_img from board_game2 where b_id = ?;");
-			pstmt.setString(1, b_id);
-			rs= pstmt.executeQuery();
-
-			if(rs.next()){
-				bg = new Boardgames2();
-				bg.setB_img(rs.getString("b_img"));
-			}
-		}catch(Exception ex){
+		String club_list_sql=
+				"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+				+"bg.b_img, bg.b_theme, bg.proceed"
+				+ " FROM offer_club oc, board_game bg"
+				+ " WHERE oc.b_id = bg.b_id"
+				+ " AND oc.club_num =" + ClubNum + ";";
+		
+		System.out.println(club_list_sql);
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			//System.out.println("실행");
+			rs = pstmt.executeQuery();
 			
+			// System.out.println(rs);
+			
+			if(rs.next()) {
+				Club = new Offerclub();
+				Club.setClub_num(rs.getInt("club_num"));
+				Club.setClub_title(rs.getString("club_title"));
+				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setUser_id(rs.getString("user_id"));
+				Club.setClub_day(rs.getString("club_day"));
+				Club.setClub_place(rs.getString("club_place"));
+				Club.setClub_time(rs.getString("club_time"));
+				Club.setClub_reps(rs.getInt("club_reps"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
+				Club.setMembership_fee(rs.getInt("membership_fee"));
+				Club.setCapacity(rs.getInt("capacity"));
+				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
+			}
+			
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
 			ex.printStackTrace();
 			
-		}finally{
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		
 		
-		return "";
-	} // boardgame_img();
+		return Club;
+	} // selectClub
 	
-
 
 } // Function_DAO.class
