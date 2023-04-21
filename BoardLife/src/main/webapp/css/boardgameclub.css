@@ -139,14 +139,13 @@ body {
 
 #club_slider .sclub_wrap .sclub .sclub_info .hashtag {
     font-size: 12px;
-    margin: 20px 0;
     font-weight: 600;
+    margin: 20px 0;
 }
 
 #club_slider .sclub_wrap .sclub .sclub_info .hashtag span {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2px 6px;
-    margin-right: 10px;
     border-radius: 10px;
 
 }
@@ -334,7 +333,10 @@ body {
 
 #boardgame_club_list .club_index .index_wrap li.active {
     background-color: #76cc1e;
-    color: #fff;
+}
+
+#boardgame_club_list .club_index .index_wrap li.active a {
+	color: #fff;
 }
 
 #boardgame_club_list .club_index .index_wrap li:hover {
@@ -408,7 +410,7 @@ body {
 
 .club .club_info .hashtag span {
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 2px 5px;
+    padding: 3px 8px;
     border-radius: 10px;
     font-size: 10px;
     margin-right: 4px;

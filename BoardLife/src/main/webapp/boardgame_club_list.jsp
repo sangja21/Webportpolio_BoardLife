@@ -17,7 +17,14 @@
     int startPage=pageInfo.getStartPage();
     int endPage=pageInfo.getEndPage();
     
+    boolean total = false;
+    
     String key = (String)request.getParameter("search");
+    String index = (String)request.getParameter("index");
+    
+    if(index == null){
+    	total = true;
+    }
  
     String Bnum = null;
     %>
@@ -27,7 +34,8 @@
     
 
      <section id="club_slider">
-
+		
+		<% if(Club_List.size() > 5){ %>
         <div class="inner_slider">
 
             <div class="left slide-btn"><img src="img/next-left.png" alt="left"></div>
@@ -35,89 +43,34 @@
 
             <ul class="sclub_wrap">
 
-                <li class="sclub type1 clearfix">
+			
+			<% for(int j = 1; j <= 5; j++){ %>
+                <li class="sclub type<%=j%> clearfix <% if(j == 3){out.print("active");}%>">
                     <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
+                    <div class="sclub_cover"><img src="img/<%= Club_List.get(j).getB_img() %>" alt="<%= Club_List.get(j).getB_img() %>"></div>
                     <div class="sclub_info">
 
-                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="sclub_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+                        <p class="sclub_title"><%= Club_List.get(j).getClub_title() %></p>
+                        <p class="sclub_moder">by <%=Club_List.get(j).getUser_id() %></p>
+                        <p class="hashtag">
+                        <span>#<%=Club_List.get(j).getClub_reps() %>회차</span>
+                        <span>#<%=Club_List.get(j).getB_theme() %></span>
+                        <span>#<%=Club_List.get(j).getProceed() %></span>
+                        <span>#<% if(Club_List.get(j).getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %></span>
+                        </p>
 
-                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                        <p class="sclub_detail"><%=Club_List.get(j).getClub_intro() %></p>
 
-                        <a href="#">자세히 보기</a>
+                        <a href="ClubDetail.cl?clubNum=<%=Club_List.get(j).getClub_num()%>&page=<%=nowPage%>">자세히 보기</a>
 
                     </div>
                 </li>
-
-                <li class="sclub type2 clearfix">
-                    <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/7wonders.png" alt="7wonders"></div>
-                    <div class="sclub_info">
-
-                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="sclub_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-
-                        <a href="#">자세히 보기</a>
-
-                    </div>
-                </li>
-
-                <li class="sclub type3 active clearfix">
-                    <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
-                    <div class="sclub_info">
-
-                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="sclub_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-
-                        <a href="#">자세히 보기</a>
-
-                    </div>
-                </li>
-
-                <li class="sclub type4 clearfix">
-                    <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/peakyblinders.png" alt="7wonders"></div>
-                    <div class="sclub_info">
-
-                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="sclub_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-
-                        <a href="#">자세히 보기</a>
-
-                    </div>
-                </li>
-
-                <li class="sclub type5 clearfix">
-                    <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/Champions_of_Midgard.png" alt="7wonders"></div>
-                    <div class="sclub_info">
-
-                        <p class="sclub_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="sclub_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="sclub_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-
-                        <a href="#">자세히 보기</a>
-
-                    </div>
-                </li>
-
+                <%} // for %>
+                
             </ul>
 
         </div>
+        <%} // if %>
 
     </section>
 
@@ -135,9 +88,9 @@
                 </div>
             </form>
             <ul class="index_wrap clearfix">
-                <li class="active">전체 클럽</li>
-                <li>오프라인 클럽</li>
-                <li>온라인 클럽</li>
+                <li class = <% if(total){ out.print("active"); } %>><a href="Club_boardList.cl">전체 클럽 : <%= index %></a></li>
+                <li class = <% if(index.equals("offline")){ out.print("active"); } %>><a href="Club_boardList.cl?index=offline">오프라인 클럽</a></li>
+                <li class = <% if(index.equals("online")){ out.print("active"); } %>><a href="Club_boardList.cl?index=online">온라인 클럽</a></li>
                 <li><a href="#">클럽 제안하기</a></li>
             </ul>
 
@@ -157,8 +110,11 @@
                     <div class="club_info">
                         <p class="club_title"><%= Club_List.get(i).getClub_title() %></p>
                         <p class="club_moder">by <%= Club_List.get(i).getUser_id() %></p>
-                        <p class="hashtag"><span>#<%= Club_List.get(i).getClub_reps() %>회차</span><span>#<%= Club_List.get(i).getProceed() %></span><span>#Offline</span></p>
-
+                        <p class="hashtag"><span>#<%= Club_List.get(i).getClub_reps() %>회차</span><span>#<%= Club_List.get(i).getProceed() %></span>
+                        <span>
+                        #<% if(Club_List.get(i).getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %>
+                        </span>
+                        </p>
                         <p class="club_detail"><%= Club_List.get(i).getClub_intro() %></p>
                     </div>
                     
@@ -169,7 +125,7 @@
                             23. 04. <%=Club_List.get(i).getStart_date().substring(4)%> 
                             | <%= Club_List.get(i).getClub_day() %> 
                             | <%= Club_List.get(i).getClub_time() %>시 
-                            | <%= Club_List.get(i).getClub_place().substring(0, 2) %> 
+                            | <% if(Club_List.get(i).getClub_place().equals("online")){ out.print("online"); } else {out.print(Club_List.get(i).getClub_place().substring(0, 2));} %>
                             | 1/<%= Club_List.get(i).getCapacity() %>명 
                             | <%= Club_List.get(i).getMembership_fee() %>원
                             </p>
@@ -177,7 +133,7 @@
                     </div>
 
                 </a>
-        <% } %>
+        <% }  // for문 %>
 
             </div>
 

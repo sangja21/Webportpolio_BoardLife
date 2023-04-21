@@ -74,8 +74,7 @@ public class Club_Function_DAO {
 		+		" bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE oc.b_id = bg.b_id"
-		+ " ORDER BY club_num DESC"
-		+ " LIMIT 1, 12;";
+		+ " ORDER BY club_num DESC";
 		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 		// System.out.println(club_list_sql);

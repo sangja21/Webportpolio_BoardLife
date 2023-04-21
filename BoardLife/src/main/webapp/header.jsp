@@ -86,7 +86,7 @@
                 <div class="sub_wrap clearfix">
                     <ul class="bd_info none">
                         <li class="menu_title">보드게임 정보</li>
-                        <li><a href="#">게임 정보</a></li>
+                        <li><a href="">게임 정보</a></li>
                         <li><a href="#">게임 테마</a></li>
                         <li><a href="#">커스텀</a></li>
                     </ul>

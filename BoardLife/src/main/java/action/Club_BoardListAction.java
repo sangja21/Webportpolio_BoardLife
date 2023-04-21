@@ -23,9 +23,7 @@ import vo.Offerclub;
 		
 		Club_BoardListService Club_boardListService = new Club_BoardListService();
 		
-		String key = request.getParameter("search");
-
-		// 검색어 값을 받아옴
+		String key = request.getParameter("search"); // 검색어 값을 받아옴
 		
 		if(key != null) {
 			// 검색어가 있는지 확인
