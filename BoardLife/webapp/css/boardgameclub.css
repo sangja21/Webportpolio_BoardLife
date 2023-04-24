@@ -167,10 +167,6 @@ body {
     bottom: 15px;
 }
 
-#club_slider .sclub_wrap .sclub .sclub_info a:hover {
-    /*    color: #a764ec;*/
-}
-
 /* color type of slide club */
 
 /* type1 */
@@ -431,8 +427,6 @@ body {
     margin-top: 20px;
 }
 
-.club .lower .participate {}
-
 .club .lower .participate img {
     width: 30px;
     height: 30px;
@@ -453,6 +447,74 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 30px;
+}
+
+/* pagination */
+
+.page {
+    margin: 30px 0 60px 0;
+    text-align: center;
+    height: 22px;
+}
+.page>a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: #76cc1e;
+    color: #fff;
+    transition: ease-out .2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .page>a:hover {
+transform: scale(0.95);
+font-size: 20px;
+ }
+ 
+.page .left {
+    margin-right: 20px;
+}
+.page .right {
+    margin-left: 20px;
+}
+
+.page ol {
+    display: inline-block;
+}
+.page ol li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: ease-out, .2s;
+}
+.page ol li~li {
+    margin-left: 10px;
+}
+.page ol li a {
+    color: #333;
+}
+
+.page ol li.active {
+	background-color : #76cc1e;
+}
+
+.page ol li.active a {
+    font-weight: bold;
+    color: #fff;
+}
+
+.page ol li:hover {
+	transform: scale(0.9);
+	background-color: #76cc1e;
+}
+
+.page ol li:hover a {
+	color: #fff;
 }
 
 /* review tab */

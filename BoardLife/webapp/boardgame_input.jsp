@@ -1,6 +1,5 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="controller.*" %>
 <%@page import="java.sql.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:include page="header.jsp"/>

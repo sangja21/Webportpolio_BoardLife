@@ -62,7 +62,7 @@ public class Club_Function_DAO {
 		
 	} // club_selectListCount()
 	
-	public ArrayList<Offerclub> selectClubList(int page, int limit){
+	public ArrayList<Offerclub> slideClubList(){
 		// 전체 클럽 목록을 출력하는 메서드
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -76,6 +76,63 @@ public class Club_Function_DAO {
 		+ " WHERE oc.b_id = bg.b_id"
 		+ " ORDER BY club_num DESC";
 		
+		ArrayList<Offerclub> slideClubList = new ArrayList<Offerclub>();
+		Offerclub Club = null;
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Club = new Offerclub();
+				Club.setClub_num(rs.getInt("club_num"));
+				Club.setClub_title(rs.getString("club_title"));
+				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setUser_id(rs.getString("user_id"));
+				Club.setClub_day(rs.getString("club_day"));
+				Club.setClub_place(rs.getString("club_place"));
+				Club.setClub_time(rs.getString("club_time"));
+				Club.setClub_reps(rs.getInt("club_reps"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
+				Club.setMembership_fee(rs.getInt("Membership_fee"));
+				Club.setCapacity(rs.getInt("capacity"));
+				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
+				slideClubList.add(Club);
+			}
+			
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
+			ex.printStackTrace();
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return slideClubList;
+	} // slideClubList();
+	
+	public ArrayList<Offerclub> selectClubList(int page, int limit){
+		// 전체 클럽 목록을 출력하는 메서드
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int startrow = (page-1)*12;
+		
+		// String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
+		
+		String club_list_sql=
+		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " FROM offer_club oc, board_game bg"
+		+ " WHERE oc.b_id = bg.b_id"
+		+ " ORDER BY club_num DESC"
+		+ " limit ?, 12";
+		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 		// System.out.println(club_list_sql);
 		Offerclub Club = null;
@@ -87,7 +144,7 @@ public class Club_Function_DAO {
 			//System.out.println("prepareStatement");
 			//System.out.println("startrow" + startrow);
 			
-			//pstmt.setInt(1, startrow);
+			pstmt.setInt(1, startrow);
 			
 			//System.out.println("pstmt.setInt(1, startrow)");
 			
@@ -129,10 +186,12 @@ public class Club_Function_DAO {
 	} // selectClubList();
 	
 	
+	
 	public ArrayList<Offerclub> searchClubList(int page, int limit, String key){
 		// 전체 클럽 목록을 출력하는 메서드
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		int startrow = (page-1)*12;
 		
 		// String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
 		
@@ -141,7 +200,8 @@ public class Club_Function_DAO {
 		+		" bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE oc.b_id = bg.b_id AND oc.club_title like '%" + key +"%'"
-		+ " ORDER BY club_num DESC";
+		+ " ORDER BY club_num DESC"
+		+ " limit ?, 12";
 		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 
@@ -153,9 +213,78 @@ public class Club_Function_DAO {
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
 			//System.out.println("실행");
+			pstmt.setInt(1, startrow);
 			rs = pstmt.executeQuery();
+			//System.out.println(rs);
+		
+			while(rs.next()) {
+				Club = new Offerclub();
+				Club.setClub_num(rs.getInt("club_num"));
+				Club.setClub_title(rs.getString("club_title"));
+				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setUser_id(rs.getString("user_id"));
+				Club.setClub_day(rs.getString("club_day"));
+				Club.setClub_place(rs.getString("club_place"));
+				Club.setClub_time(rs.getString("club_time"));
+				Club.setClub_reps(rs.getInt("club_reps"));
+				Club.setStart_date(rs.getString("start_date"));
+				Club.setFinish_date(rs.getString("finish_date"));
+				Club.setMembership_fee(rs.getInt("membership_fee"));
+				Club.setCapacity(rs.getInt("capacity"));
+				Club.setB_img(rs.getString("b_img"));
+				Club.setB_theme(rs.getString("b_theme"));
+				Club.setProceed(rs.getString("proceed"));
+				clubList.add(Club);
+			}
 			
-			System.out.println(rs);
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
+			ex.printStackTrace();
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return clubList;
+	} // searchClubList();
+	
+	public ArrayList<Offerclub> onOffClubList(int page, int limit, String index){
+		// 전체 클럽 목록을 출력하는 메서드
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int startrow = (page-1)*12;
+		
+		// String club_list_sql="select * from offer_club order by club_num desc limit 1, 12;";
+		
+		if(index.equals("online")) {
+			index = "like '%online%'";
+		} else {
+			index =  "not like '%online%'";
+		}
+		
+		
+		String club_list_sql=
+		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " FROM offer_club oc, board_game bg"
+		+ " WHERE oc.b_id = bg.b_id AND oc.club_place " + index
+		+ " ORDER BY club_num DESC"
+		+ " limit ?, 12";
+		
+		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
+
+		Offerclub Club = null;
+		
+		//System.out.println(club_list_sql);
+
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			//System.out.println("실행");
+			pstmt.setInt(1, startrow);
+			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				Club = new Offerclub();

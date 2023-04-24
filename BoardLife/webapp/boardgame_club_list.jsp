@@ -9,6 +9,7 @@
     <jsp:include page="header.jsp"/>
     
 <%
+	ArrayList<Offerclub> slideClub=(ArrayList<Offerclub>)request.getAttribute("slideClub");
     ArrayList<Offerclub> Club_List=(ArrayList<Offerclub>)request.getAttribute("club_List");
     Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("pageInfo");
     int listCount=pageInfo.getListCount();
@@ -17,14 +18,11 @@
     int startPage=pageInfo.getStartPage();
     int endPage=pageInfo.getEndPage();
     
-    boolean total = false;
-    
     String key = (String)request.getParameter("search");
+    
     String index = (String)request.getParameter("index");
     
-    if(index == null){
-    	total = true;
-    }
+    if(index == null){ index = "total"; }
  
     String Bnum = null;
     %>
@@ -35,7 +33,7 @@
 
      <section id="club_slider">
 		
-		<% if(Club_List.size() > 5){ %>
+		<% if(slideClub.size() > 5){ %>
         <div class="inner_slider">
 
             <div class="left slide-btn"><img src="img/next-left.png" alt="left"></div>
@@ -47,21 +45,21 @@
 			<% for(int j = 1; j <= 5; j++){ %>
                 <li class="sclub type<%=j%> clearfix <% if(j == 3){out.print("active");}%>">
                     <div class="off"></div>
-                    <div class="sclub_cover"><img src="img/<%= Club_List.get(j).getB_img() %>" alt="<%= Club_List.get(j).getB_img() %>"></div>
+                    <div class="sclub_cover"><img src="img/<%= slideClub.get(j).getB_img() %>" alt="<%= slideClub.get(j).getB_img() %>"></div>
                     <div class="sclub_info">
 
-                        <p class="sclub_title"><%= Club_List.get(j).getClub_title() %></p>
-                        <p class="sclub_moder">by <%=Club_List.get(j).getUser_id() %></p>
+                        <p class="sclub_title"><%= slideClub.get(j).getClub_title() %></p>
+                        <p class="sclub_moder">by <%=slideClub.get(j).getUser_id() %></p>
                         <p class="hashtag">
-                        <span>#<%=Club_List.get(j).getClub_reps() %>회차</span>
-                        <span>#<%=Club_List.get(j).getB_theme() %></span>
-                        <span>#<%=Club_List.get(j).getProceed() %></span>
-                        <span>#<% if(Club_List.get(j).getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %></span>
+                        <span>#<%=slideClub.get(j).getClub_reps() %>회차</span>
+                        <span>#<%=slideClub.get(j).getB_theme() %></span>
+                        <span>#<%=slideClub.get(j).getProceed() %></span>
+                        <span>#<% if(slideClub.get(j).getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %></span>
                         </p>
 
-                        <p class="sclub_detail"><%=Club_List.get(j).getClub_intro() %></p>
+                        <p class="sclub_detail"><%=slideClub.get(j).getClub_intro() %></p>
 
-                        <a href="ClubDetail.cl?clubNum=<%=Club_List.get(j).getClub_num()%>&page=<%=nowPage%>">자세히 보기</a>
+                        <a href="ClubDetail.cl?clubNum=<%=slideClub.get(j).getClub_num()%>&page=<%=nowPage%>">자세히 보기</a>
 
                     </div>
                 </li>
@@ -88,9 +86,9 @@
                 </div>
             </form>
             <ul class="index_wrap clearfix">
-                <li class = <% if(total){ out.print("active"); } %>><a href="Club_boardList.cl">전체 클럽 : <%= index %></a></li>
-                <li class = <% if(index.equals("offline")){ out.print("active"); } %>><a href="Club_boardList.cl?index=offline">오프라인 클럽</a></li>
-                <li class = <% if(index.equals("online")){ out.print("active"); } %>><a href="Club_boardList.cl?index=online">온라인 클럽</a></li>
+                <li class = <% if(index.equals("total")){ out.print("active"); } %>><a href="Club_boardList.cl">전체 클럽</a></li>
+                <li class = <% if(index.equals("offline")){ out.print("active"); } %>><a href="Club_boardList.cl?index=offline&page=1">오프라인 클럽</a></li>
+                <li class = <% if(index.equals("online")){ out.print("active"); } %>><a href="Club_boardList.cl?index=online&page=1">온라인 클럽</a></li>
                 <li><a href="#">클럽 제안하기</a></li>
             </ul>
 
@@ -140,6 +138,24 @@
         </div>
 
     </section>
+    
+            <!--pagination-->
+        <section class="page">
+        
+        <% if(nowPage<=1){}else{ %>
+            <a href="Club_boardList.cl?page=<%=nowPage-1 %>" class="left">&lt;</a>
+        <%} %>
+        
+            <ol>
+            <% for(int a = startPage; a<=endPage; a++){ %>
+                <li class=<% if(a == nowPage){ out.print("active");}%>><a href="Club_boardList.cl?page=<%=a%>"><%=a%></a></li>
+            <%} %>
+            </ol>
+            
+		<%if(nowPage>=maxPage){}else{ %>
+            <a href="Club_boardList.cl?page=<%=nowPage+1 %>" class="right">&gt;</a>
+		<%} %>
+        </section>
 
     <section id="reviews">
 
