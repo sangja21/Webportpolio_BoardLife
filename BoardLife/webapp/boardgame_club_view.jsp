@@ -9,7 +9,16 @@
     String nowPage = (String)request.getAttribute("page");
 %>
 
-<section id="boardgame_club_view">
+    <!--  JS  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="js/boardgame_club_View.js"></script>
+    
+</head>
+
+<body>
+
+    <section id="boardgame_club_view">
 
         <div class="club_apply clearfix">
 
@@ -17,7 +26,7 @@
                 <span class="cover"></span>
                 <img src="img/peakyblinders.png" alt="peakyblinders">
                 <p class="boardgame_detail">
-                    <span class="title"> PeakyfokinBlinders </span>
+                    <span class="title">Peaky Blinders: Under New Management (2019)</span>
                     <br>
                     <span class="description">Create and manage your criminal network in a gang war set in 1920's England.</span>
                 </p>
@@ -27,7 +36,7 @@
 
                 <div class="club_detail">
 
-                    <p class="club_title"><%= club.getClub_title() %></p>
+                    <p class="club_title">톰 셸비와 함께하는 보드게임 여행</p>
                     <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
 
                     <div class="user_info clearfix">
@@ -75,16 +84,9 @@
                     <p>Board Games</p>
 
                     <div class="boardgame_wrap">
-                       <img src="img/peakyblinders.png" alt="" class="choice">
-                        <img src="img/7wonders.png" alt="">
-                        <img src="img/sleeping_gods.png" alt="">
-                        <img src="img/Pandemic_Legacy.png" alt="">
-                        <img src="img/Roll_Player_Adventures.png" alt="">
-                        <img src="img/Terraforming_Mars.png" alt="">
-                        <img src="img/too_many_bones.png" alt="">
-                        <img src="img/woodcraft.png" alt="">
-                        <img src="img/Paladins_of_the_West_Kingdom.png" alt="">
-                        <img src="img/Champions_of_Midgard.png" alt="">
+                        <img src="img/peakyblinders.png" alt="Peaky Blinders: Under New Management (2019)" data-value="Create and manage your criminal network in a gang war set in 1920's England." class="choice" id="boardgame1">
+                        <img src="img/7wonders.png" alt="7 Wonders Duel (2015)" data-value="Science Military What will you draft to win this head-to-head version of 7 Wonders" id="boardgame2">
+                        <img src="img/sleeping_gods.png" alt="Sleeping Gods (2021)" data-value="Voyages of the steamship 'Manticore'' and her crew on the Wandering Sea." id="boardgame3">
                     </div>
 
                 </div>
