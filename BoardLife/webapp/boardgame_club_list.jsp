@@ -159,7 +159,7 @@
 
     <section id="reviews">
 
-        <div class="review_tap">
+        <div class="review_tab">
             <p class="review_title">Recently Review</p>
 
             <ul class="review_wrap">

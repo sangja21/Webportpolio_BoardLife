@@ -7,7 +7,7 @@ body {
 #boardgame_club_view {
     width: 1280px;
     margin: 0 auto;
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 .club_apply {
@@ -102,7 +102,7 @@ body {
     height: 80px;
     background-color: rgba(0, 0, 0, 0.03);
     margin: 20px 0;
-/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
+    /*    border: 1px solid rgba(0, 0, 0, 0.1);*/
     border-radius: 20px;
 }
 
@@ -160,8 +160,6 @@ body {
 
 /* view_tab_menu */
 
-.btn_wrap {}
-
 .btn_wrap a {
     float: left;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -209,28 +207,35 @@ body {
 }
 
 .club_apply .club_info .club_boardgame p {
-    margin-bottom: 15px;
-    font-size: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
     font-weight: 700;
     color: #333;
     text-align: center;
 }
 
 .club_apply .club_info .club_boardgame div.boardgame_wrap {
-    margin-left: 15px;
+    margin: 25px 0 0 30px;
 }
 
 .club_apply .club_info .club_boardgame div img {
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
     border-radius: 5px;
     box-sizing: border-box;
     cursor: pointer;
     margin: 0 10px 10px 0;
+    transition: ease-out .2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .club_apply .club_info .club_boardgame div img.choice {
-    border: 5px solid #76cc1e;
+    border: 6px solid #76cc1e;
+}
+
+.club_apply .club_info .club_boardgame div img:hover {
+    /*    transform: translateY(-10px);*/
+    opacity: .8;
 }
 
 /* boardgame info */
@@ -246,8 +251,6 @@ body {
 
 /*view_tab menu */
 
-.view_tab_menu {}
-
 .view_tab_menu li {
     float: left;
     width: 200px;
@@ -257,18 +260,15 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     margin-right: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.view_tab_menu li.active {
-    background-color: #fff;
-}
-
-.view_tab_menu li a {
-    display: block;
+    cursor: pointer;
     font-size: 18px;
     font-weight: 700;
     text-align: center;
     line-height: 60px;
+}
+
+.view_tab_menu li.active {
+    background-color: #fff;
 }
 
 #tab_wrap .tab {
@@ -286,7 +286,7 @@ body {
 /* detail_tab */
 
 .tab pre.detail {
-    width: 900px;
+    width: 80%;
     margin: 0 auto;
     padding: 50px 30px;
     box-sizing: content-box;
@@ -312,20 +312,54 @@ body {
 
 /* review tab */
 
+.tab .review_wrap {
+
+    padding: 20px 0;
+
+}
+
+.tab .reviewGuide {
+    width: 80%;
+    padding: 30px 10px;
+    margin-left: 65px;
+}
+
+.tab .reviewGuide p {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.tab .reviewGuide a {
+    
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #000;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+
 .tab .review_wrap .review {
     position: relative;
-    width: 100%;
-    height: 80px;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     box-sizing: border-box;
     transition: ease-out .2s;
+    /*    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);*/
 }
 
+/*
 .tab .review_wrap .review:hover {
     transform: translateY(-5px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+*/
 
 .tab .review_wrap .review .img_wrap {
     width: 50px;
@@ -340,7 +374,7 @@ body {
 }
 
 .tab .review_wrap .review .txt_wrap {
-    width: 1200px;
+    width: 94%;
     height: 100%;
     margin-left: 10px;
     float: left;
@@ -376,20 +410,29 @@ body {
 
 /* qna tab */
 
+.tab .qna_wrap {
+
+    padding: 20px 0;
+
+}
+
 .tab .qna_wrap .qna {
     position: relative;
-    width: 100%;
-    height: 80px;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     box-sizing: border-box;
     transition: ease-out .2s;
 }
 
+/*
 .tab .qna_wrap .qna:hover {
     transform: translateY(-5px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+*/
 
 .tab .qna_wrap .qna .img_wrap {
     width: 50px;
@@ -404,7 +447,7 @@ body {
 }
 
 .tab .qna_wrap .qna .txt_wrap {
-    width: 1200px;
+    width: 94%;
     height: 100%;
     margin-left: 10px;
     float: left;

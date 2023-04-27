@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* boardgame club CSS */
 
-/********************************* boardgame_club_list *********************************/
+/******************************** boardgame_club_list ********************************/
 
 /* #club_slider */
 body {
@@ -139,13 +139,14 @@ body {
 
 #club_slider .sclub_wrap .sclub .sclub_info .hashtag {
     font-size: 12px;
-    font-weight: 600;
     margin: 20px 0;
+    font-weight: 600;
 }
 
 #club_slider .sclub_wrap .sclub .sclub_info .hashtag span {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2px 6px;
+    margin-right: 10px;
     border-radius: 10px;
 
 }
@@ -165,6 +166,10 @@ body {
     font-weight: 700;
     position: absolute;
     bottom: 15px;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info a:hover {
+    /*    color: #a764ec;*/
 }
 
 /* color type of slide club */
@@ -226,15 +231,15 @@ body {
 
 /* type5 */
 .type5 {
-    background-color: #edb9d6;
+    background-color: #a4e0eb;
 }
 
 .type5 a {
-    color: #edb9d6;
+    color: #a4e0eb;
 }
 
 .type5 a:hover {
-    color: #ff6dbe;
+    color: #22cdec;
 }
 
 
@@ -247,7 +252,7 @@ body {
 
 #boardgame_club_list h3 {
     text-align: center;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     margin: 50px 0;
     color: #333;
@@ -329,10 +334,7 @@ body {
 
 #boardgame_club_list .club_index .index_wrap li.active {
     background-color: #76cc1e;
-}
-
-#boardgame_club_list .club_index .index_wrap li.active a {
-	color: #fff;
+    color: #fff;
 }
 
 #boardgame_club_list .club_index .index_wrap li:hover {
@@ -399,17 +401,14 @@ body {
 
 .club .club_info .hashtag {
     margin: 10px 0;
-    height: 20px;
-    line-height: 16px;
-    overflow: hidden;
 }
 
 .club .club_info .hashtag span {
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 3px 8px;
+    padding: 2px 5px;
     border-radius: 10px;
     font-size: 10px;
-    margin-right: 4px;
+    margin-right: 10px;
     color: #666;
 }
 
@@ -418,7 +417,6 @@ body {
     line-height: 14px;
     color: #888;
     text-indent: 5px;
-    height: 80px;
 }
 
 .club .lower {
@@ -468,12 +466,12 @@ body {
     transition: ease-out .2s;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
  }
- 
+
  .page>a:hover {
 transform: scale(0.95);
 font-size: 20px;
  }
- 
+
 .page .left {
     margin-right: 20px;
 }
@@ -524,25 +522,31 @@ font-size: 20px;
     margin: 0 auto;
 }
 
-.review_tap {
+#reviews h3 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 26px;
+}
+
+#reviews .review_tab {
     width: 1280px;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 10px;
 }
 
-.review_tap p.review_title {
+.review_tab p.review_title {
     font-size: 22px;
     font-weight: 700;
     margin-left: 10px;
     padding-top: 10px;
 }
 
-.review_wrap {
+.review_tab .review_wrap {
     margin-top: 30px;
 }
 
-.review {
+.review_tab .review_wrap .review {
     position: relative;
     width: 100%;
     height: 80px;
@@ -553,24 +557,24 @@ font-size: 20px;
     transition: ease-out .2s;
 }
 
-.review:hover {
+.review_tab .review_wrap .review:hover {
     transform: translateY(-5px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.review .img_wrap {
+.review_tab .review_wrap .review .img_wrap {
     width: 50px;
     height: 100%;
     float: left;
 }
 
-.review img {
+.review_tab .review_wrap .review .img_wrap img {
     width: 50px;
     height: 50px;
     border-radius: 30px;
 }
 
-.review .txt_wrap {
+.review_tab .review_wrap .review .txt_wrap {
     width: 1200px;
     height: 100%;
     margin-left: 10px;
@@ -578,19 +582,19 @@ font-size: 20px;
     position: relative;
 }
 
-.review .txt_wrap .nickname {
+.review_tab .review_wrap .review .txt_wrap .nickname {
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.review .txt_wrap .sentence {
+.review_tab .review_wrap .review .txt_wrap .sentence {
     font-size: 14px;
     line-height: 16px;
     color: #555;
 }
 
-.review .txt_wrap .r_date {
+.review_tab .review_wrap .review .txt_wrap .r_date {
     position: absolute;
     bottom: 5px;
     right: 0;
@@ -598,7 +602,7 @@ font-size: 20px;
     font-size: 12px;
 }
 
-.review .txt_wrap .btn {
+.review_tab .review_wrap .review .txt_wrap .btn {
     position: absolute;
     top: 0;
     right: 0;

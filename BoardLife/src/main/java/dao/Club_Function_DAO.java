@@ -71,10 +71,10 @@ public class Club_Function_DAO {
 		
 		String club_list_sql=
 		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
-		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
-		+ " WHERE oc.b_id = bg.b_id"
-		+ " ORDER BY club_num DESC";
+		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id"
+		+ " ORDER BY club_num DESC;";
 		
 		ArrayList<Offerclub> slideClubList = new ArrayList<Offerclub>();
 		Offerclub Club = null;
@@ -127,9 +127,9 @@ public class Club_Function_DAO {
 		
 		String club_list_sql=
 		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
-		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
-		+ " WHERE oc.b_id = bg.b_id"
+		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id"
 		+ " ORDER BY club_num DESC"
 		+ " limit ?, 12";
 		
@@ -197,9 +197,9 @@ public class Club_Function_DAO {
 		
 		String club_list_sql=
 		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
-		+		" bg.b_img, bg.b_theme, bg.proceed"
+		+ " bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
-		+ " WHERE oc.b_id = bg.b_id AND oc.club_title like '%" + key +"%'"
+		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id AND oc.club_title like '%" + key +"%'"
 		+ " ORDER BY club_num DESC"
 		+ " limit ?, 12";
 		
@@ -269,7 +269,7 @@ public class Club_Function_DAO {
 		"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
 		+		" bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
-		+ " WHERE oc.b_id = bg.b_id AND oc.club_place " + index
+		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id AND oc.club_place " + index
 		+ " ORDER BY club_num DESC"
 		+ " limit ?, 12";
 		
@@ -329,7 +329,7 @@ public class Club_Function_DAO {
 				"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
 				+"bg.b_img, bg.b_theme, bg.proceed"
 				+ " FROM offer_club oc, board_game bg"
-				+ " WHERE oc.b_id = bg.b_id"
+				+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id"
 				+ " AND oc.club_num =" + ClubNum + ";";
 		
 		System.out.println(club_list_sql);

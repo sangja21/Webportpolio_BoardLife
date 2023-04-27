@@ -1,17 +1,6 @@
 $(document).ready(function () {
-
-//    var BoardgameTitle1 = $('#boardgame1').attr('alt');
-//    var BoardgameTitle2 = $('#boardgame2').attr('alt');
-//    var BoardgameTitle3 = $('#boardgame3').attr('alt');
-//
-//    var BoardgameSrc1 = $('#boardgame1').attr('src');
-//    var BoardgameSrc2 = $('#boardgame2').attr('src');
-//    var BoardgameSrc3 = $('#boardgame3').attr('src');
-//
-//    var BoardgameDesc1 = $('#boardgame1').data('value');
-//    var BoardgameDesc2 = $('#boardgame2').data('value');
-//    var BoardgameDesc3 = $('#boardgame3').data('value');
-
+    
+    // boardGame info function
     var $bgImg = $('.club_img img');
     var $clubBG = $('.club_img');
     var $clubTitle = $('.boardgame_detail .title');
@@ -25,19 +14,12 @@ $(document).ready(function () {
     var imgIndex;
     var newBackgroundImage;
 
-
     var overClick = false;
     // 광클 금지
 
-
-    //    console.log(BoardgameTitle1);
-    //    console.log(BoardgameDesc1);
-    //    console.log("");
-    //    console.log(BoardgameTitle2);
-    //    console.log(BoardgameDesc2);
-    //    console.log("");
-    //    console.log(BoardgameTitle3);
-    //    console.log(BoardgameDesc3);
+    // click tab function
+    var clickValue; //클릭한 탭의 값을 담아두는 역할
+    
 
     $(".boardgame_wrap img").click(function () {
         //        console.log($(this).attr('alt'));
@@ -55,9 +37,11 @@ $(document).ready(function () {
         BoardgameDesc = $(this).data('value');
         // 클릭한 요소의 이미지 파일 경로 & 보드게임 이름 & 설명을 받아옴.
 
+        /*
         console.log(BoardgameSrc);
         console.log(BoardgameTitle);
         console.log(BoardgameDesc);
+        */
 
         $(".boardgame_wrap img").removeClass("choice");
         $(this).addClass("choice");
@@ -101,7 +85,7 @@ $(document).ready(function () {
             //$(this).addClass("choice");
             $bgImg.attr('src', BoardgameSrc);
 
-            $bgImg.fadeIn(1500, function () {
+            $bgImg.fadeIn(1000, function () {
                 // fade in 완료 후 실행되는 콜백 함수
                 overClick = false;
             });
@@ -110,6 +94,23 @@ $(document).ready(function () {
         //광클금지 스위치 해제
 
     }); // click Event
+    
+    
+    $(".view_tab_menu li").click(function(){
+        
+        
+        $(".view_tab_menu li").removeClass("active");
+        $(this).addClass("active");
+        
+        clickValue = this.id + "Detail";
+        
+        console.log(clickValue);
+        
+        $("#tab_wrap .tab").removeClass("active");
+        
+        $("#" + clickValue).addClass("active");
+        
+    }); // tab click function
 
 
 }); // $(document).ready(function(){}); 
