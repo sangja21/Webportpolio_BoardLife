@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
 <%request.setCharacterEncoding("utf-8");%>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header_gameinfo2.jsp"/>
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_custom.css">
-<script src="js/index.js"></script>
+<script src="js/custom.js"></script>
+
         <section style="width: 100%; height: 800px; padding-top: 120px;">
         
         <section class="custom">

@@ -33,7 +33,7 @@
     	<col width="5%"><!--번호-->
     	<col width="15%"><!--보드게임 타이틀이미지-->
         <col width="400px"><!--제목(한글)-->
-        <col width="25%"><!--출시년도-->
+        <col width="20%"><!--출시년도-->
 	 	<col width="30%"><!--유저 평점-->
         <col width="10%"><!---->
 	</colgroup>
@@ -52,7 +52,7 @@
 			for(int i = 0; i < articleList.size(); i++){
 		%>
 		<tr class="boardgame_list">
-		<td style="margin-left: 10px;"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
+		<td style="margin-left: 10px;border-left: 2px solid #aaa"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
 		<td><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
    		<td id="b_t"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">
    		<h2><%= articleList.get(i).getB_title_kor()%></h2><br>
@@ -60,17 +60,16 @@
    		</a></td>
    		<td class="blist_year" style="text-align: left;"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">(<%=articleList.get(i).getYearof()%>)</a></td>
    		<td class="hashtag">
-   		<p>
-   		<span>#<%=articleList.get(i).getB_theme()%></span>
+   		<p class="best_theme">
+   		<span><a herf="boardgameinfo_theme.jsp"><%=articleList.get(i).getB_theme()%></a></span>
    		</p>
-   		<p>
+   		<p class="best_proceed">
    		<span>#<%=articleList.get(i).getProceed()%></span>
    		</p>
    		</td>
-		<td><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">0</a></td>
+		<td class="best_rating"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">0</a></td>
 		<%} %>
 		</tr>
-
 </table>
 </section>
 </body>
