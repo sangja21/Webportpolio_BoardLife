@@ -6,11 +6,6 @@
 }
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-table{
-	border-collapse: collapse;
-}
-
-
 .notosanskr * { 
  font-family: 'Noto Sans KR', sans-serif;
 }
@@ -22,9 +17,9 @@ body{
 .b_list_title{
 	font-family: 'TheJamsil5Bold';
 }
-td a img{
-	width: 120px;
-	height: 120px;
+a img{
+	width: 80px;
+	height: 80px;
 }
 
 thead td{
@@ -36,13 +31,12 @@ thead td{
 }
 .boardgamelist div{
 	margin-top:50px;
+	border-bottom: 1px solid;
 }
 .boardgame_list td{
 	text-align: center;
 	height: 80px;
-	padding: 10px	0;
-	border-bottom: 2px solid #aaa;
-	border-top: 2px solid #aaa;
+	padding: 5px	0;
 }
 h2{
 	text-align: center;
@@ -50,16 +44,15 @@ h2{
 }
 th{
 	padding: 30px 0;
-	font-size: 14pt;
 }
 #b_t h3{
-	font-size: 5pt;
+	font-size: 4pt;
 	color: #aaa;
 	text-align: left;
 }
 #b_t h2{
 	font-family: 'TheJamsil5Bold';
-	font-size: 14pt;
+	font-size: 13pt;
 	padding: 0;
 	text-align: left;
 }
@@ -70,24 +63,11 @@ th{
 
 display: inline-block;
 margin-right: 5px;
-padding: 3px 8px;
+padding: 5px 8px;
 background-color : rgba(0,0,0,0.1);
 border-radius : 10px;
 color: #555;
 font-weight: 500;
 font-size : 12pt;
 
-}
-.blist_year{
-	font-size: 10pt;
-}
-.best_theme{
-	padding: 2 8px;
-	margin-bottom: 10px;
-}
-.best_proceed{
-	
-}
-.best_rating{
-	border-right: 2px solid #aaa;
 }

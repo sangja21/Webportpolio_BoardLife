@@ -1,9 +1,9 @@
-<%@page import="java.util.ArrayList"%>
+<%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="board.*" %>
 <%@ page import="vo.Community" %>
 <%@ page import="vo.Boardgames" %>
-<%@page import="java.sql.*"%>
+<%@ page import="java.sql.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/freeboard.css">
